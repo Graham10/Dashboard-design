@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luqman Stations</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div class="app">
+
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <img src="luqman1.png" alt="Luqman depot logo">
+                    <span>Luqman</span>
+                </div>
+                <button class="sidebar-toggle" id="sidebarToggle" title="Toggle sidebar">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <div class="menu-title">Menu</div>
+            <ul class="menu" id="mainMenu">
+                <li class="active" data-label="Dashboard"><i class="fas fa-tachometer-alt"></i> <span>Dashboard</span>
+                </li>
+                <li><a href="ops.html"><i class="fas fa-cogs"></i> <span>Ops</span></a></li>
+                <li><a href="client.html"><i class="fas fa-user"></i> <span>Depot</span></a></li>
+                <li><a href="stations.html"><i class="fas fa-gas-pump"></i> <span>Stations</span></a></li>
+                <li><a href="refreshment.html"><i class="fas fa-coffee"></i> <span>Refreshment</span></a></li>
+                <li><a href="log.html"><i class="fas fa-clipboard-list"></i> <span>Log</span></a></li>
+                <li><a href="transport.html"><i class="fas fa-truck"></i><span>Transport</span></a></li>
+                <li><a href="group.html"><i class="fas fa-users"></i> <span>Group</span></a></li>
+                <li><a href="flo.html"><i class="fas fa-water"></i> <span>Flo</span></a></li>
+                <li><a href="premises.html"><i class="fas fa-building"></i> <span>Premises</span></a></li>
+                <li><a href="accounts.html"><i class="fas fa-chart-line"></i> <span>Accounts</span></a></li>
+                <li><a href="storage.html"><i class="fas fa-archive"></i> <span>Storage</span></a></li>
+            </ul>
+            <div class="sidebar-footer">DEPOT</div>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+
+            <!-- SEARCH BAR section -->
+            <div class="search-area">
+                <div class="section-head">
+                    <i class="fas fa-search" style="margin-right: 6px;"></i> Search Bar
+                </div>
+                <div class="search-wrapper">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search depot, history, master...">
+                </div>
+
+                <!-- DEPOT - History - Master List -  -->
+                <div class="filter-dash">
+                    <span class="filter-item"><i class="fas fa-map-pin"></i> DEPOT</span>
+                    <span class="dash-sep">—</span>
+                    <span class="filter-item"><i class="fas fa-clock-rotate-left"></i> History</span>
+                    <span class="dash-sep">—</span>
+                    <span class="filter-item"><i class="fas fa-list"></i> Master List</span>
+                    <span style="color:#a0afc0; margin-left: 4px;">—</span>
+                </div>
+
+                <div
+                    style="margin-top: 12px; font-size:0.8rem; color:#8b9eb0; font-family: monospace; padding-left: 4px;">
+                    <span style="opacity:0.6;">// - DEPOT - History - Master List -</span>
+                </div>
+            </div>
+
+            <!-- OPTIONS cards -->
+            <div class="options-section">
+                <div class="section-head">
+                    <i class="fas fa-cog" style="margin-right: 8px;"></i> Options
+                </div>
+                <div class="options-grid">
+                    <div class="option-card" tabindex="0">
+                        <i class="fas fa-warehouse"></i>
+                        <span>Loading Depots</span>
+                        <small>12 active</small>
+                    </div>
+                    <div class="option-card" tabindex="0">
+                        <i class="fas fa-location-dot"></i>
+                        <span>Destinations</span>
+                        <small>34 locations</small>
+                    </div>
+                    <div class="option-card" tabindex="0">
+                        <i class="fas fa-user-tie"></i>
+                        <span>Customers</span>
+                        <small>189 accounts</small>
+                    </div>
+                    <div class="option-card" tabindex="0">
+                        <i class="fas fa-truck"></i>
+                        <span>Suppliers</span>
+                        <small>47 partners</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- extra history line -->
+            <hr>
+            <div style="display: flex; gap: 16px; color:#6f7c91; font-size:0.85rem; padding: 8px 0;">
+                <span><i class="far fa-clock"></i> recent: </span>
+                <span>DEPOT</span> <span>·</span>
+                <span>History</span> <span>·</span>
+                <span>Master List</span> <span>·</span>
+                <span>Loading Depots</span>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
