@@ -2,9 +2,8 @@
     const sidebar = document.getElementById('sidebar');
     const toggleBtn = document.getElementById('sidebarToggle');
     const menuItems = document.querySelectorAll('#mainMenu li');
-    const breakpoint = 768; // pixels
+    const breakpoint = 768;
 
-    // Function to set collapsed state based on window width
     function setCollapsedByWidth() {
       if (window.innerWidth <= breakpoint) {
         sidebar.classList.add('collapsed');
@@ -13,17 +12,13 @@
       }
     }
 
-    // Run on initial load
     setCollapsedByWidth();
 
-    // Listen for resize events
     window.addEventListener('resize', setCollapsedByWidth);
 
-    // Manual toggle button: switch class regardless, but also save state?
     toggleBtn.addEventListener('click', function(e) {
       e.stopPropagation();
       sidebar.classList.toggle('collapsed');
-      // (optional) you could store user preference, but we let resize override later
     });
 
     // Menu item active state
@@ -39,19 +34,6 @@
       });
     });
 
-    // Card clicks
-    document.querySelectorAll('.option-card').forEach(card => {
-      card.addEventListener('click', () => {
-        console.log('option card:', card.querySelector('span')?.innerText);
-      });
-    });
-
-    // Filter chips
-    document.querySelectorAll('.filter-item').forEach(chip => {
-      chip.addEventListener('click', () => {
-        console.log('filter chip:', chip.innerText.trim());
-      });
-    });
 
     const currentPage = window.location.pathname.split('/').pop() || 'dashboard.html';
     document.querySelectorAll('.menu li a').forEach(link => {
@@ -63,7 +45,6 @@
 // ---------- CUSTOM DROPDOWNS ----------
     const dropdowns = document.querySelectorAll('.custom-dropdown');
 
-    // Close all dropdowns
     function closeAllDropdowns(except = null) {
       dropdowns.forEach(drop => {
         const menu = drop.querySelector('.dropdown-menu');
@@ -74,14 +55,13 @@
       });
     }
 
-    // Toggle a specific dropdown
     function toggleDropdown(drop) {
       const menu = drop.querySelector('.dropdown-menu');
       const btn = drop.querySelector('.dropdown-btn');
       if (!menu || !btn) return;
 
       const isOpen = menu.classList.contains('show');
-      closeAllDropdowns(); // close others
+      closeAllDropdowns();
       if (!isOpen) {
         menu.classList.add('show');
         btn.classList.add('active');
@@ -111,7 +91,7 @@
           // Close dropdown
           menu.classList.remove('show');
           btn.classList.remove('active');
-          // Log or trigger action
+  
           console.log(`${drop.id} selected:`, value);
         });
       });
@@ -135,13 +115,11 @@
     // Prevent closing when clicking inside dropdown
     userDropdown.addEventListener('click', (e) => e.stopPropagation());
 
-    // User dropdown options (example actions)
     userDropdown.querySelectorAll('li').forEach(item => {
       item.addEventListener('click', () => {
         const action = item.innerText.trim();
         console.log(`User menu: ${action}`);
         userDropdown.classList.remove('show');
-        // Here you can add actual navigation or actions
       });
     });
 
